@@ -9,4 +9,5 @@ repositories {
 
 dependencies {
     testCompile "junit:junit:4.11"
+    testCompile "pl.pragmatists:JUnitParams:1.0.5"
 }

@@ -1,10 +1,14 @@
 package fizzbuzz.kata;
 
+import junitparams.JUnitParamsRunner;
+import junitparams.Parameters;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 
 import static org.junit.Assert.*;
 
-public class FizzBuzzTest {
+@RunWith(JUnitParamsRunner.class)
+public class _0_FizzBuzzTest {
 
     /**
      * Napisz algorytm, który dla liczb z zakresu <1, 100> zwróci liczbę na wejściu
@@ -17,16 +21,6 @@ public class FizzBuzzTest {
     FizzBuzz fizzBuzz = new FizzBuzz();
 
     @Test
-    public void shouldReturn1For1() {
-        //given
-        int input = 1;
-        //when
-        String output = fizzBuzz.calculate(input);
-        //then
-        assertEquals("1", output);
-    }
-
-    @Test
     public void shouldReturnFizzFor3() {
         //given
         int input = 3;
@@ -35,6 +29,8 @@ public class FizzBuzzTest {
         //then
         assertEquals("Fizz", output);
     }
+
+
 
     @Test
     public void shouldReturnBuzzFor5() {
@@ -45,6 +41,7 @@ public class FizzBuzzTest {
         //then
         assertEquals("Buzz", output);
     }
+
 
     @Test
     public void shouldReturnFizzBuzzFor15() {
