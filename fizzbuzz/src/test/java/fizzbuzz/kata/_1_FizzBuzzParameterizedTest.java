@@ -5,6 +5,8 @@ import junitparams.Parameters;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import java.util.stream.IntStream;
+
 import static org.junit.Assert.assertEquals;
 
 @RunWith(JUnitParamsRunner.class)
@@ -21,9 +23,16 @@ public class _1_FizzBuzzParameterizedTest {
         assertEquals(String.valueOf(input), output);
     }
 
+    public Object[] multiplesOf3ButNot5() {
+        return IntStream.rangeClosed(1, 100)
+                .filter(i -> i % 3 == 0)
+                .filter(i -> i % 5 != 0)
+                .mapToObj(Integer::valueOf)
+                .toArray();
+    }
 
     @Test
-    @Parameters({"3", "6", "9", "12", "36", "66"})
+    @Parameters(method = "multiplesOf3ButNot5")
     public void shouldReturnFizzFor(int input) {
         //when
         String output = fizzBuzz.calculate(input);
@@ -38,5 +47,14 @@ public class _1_FizzBuzzParameterizedTest {
         String output = fizzBuzz.calculate(input);
         //then
         assertEquals("Buzz", output);
+    }
+
+    @Test
+    @Parameters({"15", "30", "45", "60", "75", "90"})
+    public void shouldReturnFizzBuzzFor(int input) {
+        //when
+        String output = fizzBuzz.calculate(input);
+        //then
+        assertEquals("FizzBuzz", output);
     }
 }
