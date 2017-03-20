@@ -1,5 +1,7 @@
 package fizzbuzz.kata;
 
+import org.junit.Test;
+
 import static org.junit.Assert.*;
 
 public class FizzBuzzTest {
@@ -14,4 +16,43 @@ public class FizzBuzzTest {
 
     FizzBuzz fizzBuzz = new FizzBuzz();
 
+    @Test
+    public void shouldReturn1For1() {
+        //given
+        int input = 1;
+        //when
+        String output = fizzBuzz.calculate(input);
+        //then
+        assertEquals("1", output);
+    }
+
+    @Test
+    public void shouldReturnFizzFor3() {
+        //given
+        int input = 3;
+        //when
+        String output = fizzBuzz.calculate(input);
+        //then
+        assertEquals("Fizz", output);
+    }
+
+    @Test
+    public void shouldReturnBuzzFor5() {
+        //given
+        int input = 5;
+        //when
+        String output = fizzBuzz.calculate(input);
+        //then
+        assertEquals("Buzz", output);
+    }
+
+    @Test
+    public void shouldReturnFizzBuzzFor15() {
+        //given
+        int input = 15;
+        //when
+        String output = fizzBuzz.calculate(input);
+        //then
+        assertEquals("FizzBuzz", output);
+    }
 }
