@@ -31,7 +31,6 @@ public class _0_FizzBuzzTest {
     }
 
 
-
     @Test
     public void shouldReturnBuzzFor5() {
         //given
@@ -51,5 +50,24 @@ public class _0_FizzBuzzTest {
         String output = fizzBuzz.calculate(input);
         //then
         assertEquals("FizzBuzz", output);
+    }
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionIf101() {
+        //given
+        int input = 101;
+        //when
+        fizzBuzz.calculate(input);
+        //then
+    }
+
+
+    @Test(expected = IllegalArgumentException.class)
+    public void shouldThrowExceptionIf0() {
+        //given
+        int input = 0;
+        //when
+        fizzBuzz.calculate(input);
+        //then
     }
 }

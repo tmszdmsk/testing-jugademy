@@ -11,4 +11,6 @@ dependencies {
     testCompile "junit:junit:4.11"
     testCompile "pl.pragmatists:JUnitParams:1.0.5"
     testCompile "com.carrotsearch.randomizedtesting:randomizedtesting-runner:2.5.0"
+    testCompile "org.mockito:mockito-core:2.+"
+    testCompile 'org.assertj:assertj-core:3.6.2'
 }
