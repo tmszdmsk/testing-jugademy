@@ -31,7 +31,6 @@ class FizzBuzzSpec extends Specification {
         number << [-1, 0, 101]
     }
 
-
     def "result from collector should contain 3"() {
         setup:
         def collector = new FizzBuzzCollector(fizzBuzz)
@@ -41,5 +40,18 @@ class FizzBuzzSpec extends Specification {
 
         then:
         result.contains("3")
+    }
+
+    def "should call fizzBuzz 100 times"() {
+        setup:
+        def fizzBuzzMock = Mock(FizzBuzz)
+        def collector = new FizzBuzzCollector(fizzBuzzMock)
+
+        when:
+        def result = collector.takeAll()
+
+        then:
+        100 * fizzBuzzMock.calculate(_) >> "FooBar"
+        result.contains("FooBar")
     }
 }
