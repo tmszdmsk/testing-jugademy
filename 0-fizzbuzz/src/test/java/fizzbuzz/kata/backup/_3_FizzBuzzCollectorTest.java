@@ -1,5 +1,7 @@
-package fizzbuzz.kata;
+package fizzbuzz.kata.backup;
 
+import fizzbuzz.kata.FizzBuzz;
+import fizzbuzz.kata.FizzBuzzCollector;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;

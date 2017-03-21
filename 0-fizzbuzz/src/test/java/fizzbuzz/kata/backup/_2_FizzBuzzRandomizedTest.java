@@ -1,7 +1,8 @@
-package fizzbuzz.kata;
+package fizzbuzz.kata.backup;
 
 
 import com.carrotsearch.randomizedtesting.RandomizedRunner;
+import fizzbuzz.kata.FizzBuzz;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 

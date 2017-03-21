@@ -1,5 +1,6 @@
-package fizzbuzz.kata;
+package fizzbuzz.kata.backup;
 
+import fizzbuzz.kata.FizzBuzz;
 import junitparams.JUnitParamsRunner;
 import junitparams.Parameters;
 import org.junit.Test;
