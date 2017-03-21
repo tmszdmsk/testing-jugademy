@@ -1,3 +1,5 @@
 rootProject.name = 'testing-jugademy'
 include 'fizzbuzz'
+include 'benchmark'
+include 'integration'
 
