@@ -1,6 +1,7 @@
+import static org.assertj.core.api.Assertions.assertThat;
+
 import org.junit.After;
 import org.junit.Test;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -10,16 +11,15 @@ public class GoogleTest {
 
   @Test
   public void shouldLogin() {
-    chromeDriver.get("http://community.wikia.com");
+    //when
+    chromeDriver.get("http://harrypotter.wikia.com");
+    WebElement searchInput = chromeDriver.findElementById("searchInput");
+    searchInput.sendKeys("Dumbledore");
+    searchInput.submit();
 
-    WebElement myAccount = chromeDriver.findElement(By.className("wds-global-navigation__account-menu"));
-    myAccount.click();
-    WebElement singInButton = chromeDriver.findElement(By.id("global-navigation-anon-sign-in"));
-    singInButton.click();
-
-    System.out.println(chromeDriver.getWindowHandles());
-
-    System.out.println(chromeDriver.getCurrentUrl());
+    //then
+    assertThat(chromeDriver.getCurrentUrl())
+        .isEqualTo("http://harrypotter.wikia.com/wiki/Special:Search?query=Dumbledore");
   }
 
   @After
