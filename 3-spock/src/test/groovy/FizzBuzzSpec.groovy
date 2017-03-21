@@ -19,7 +19,6 @@ class FizzBuzzSpec extends Specification {
         result.contains("3")
     }
 
-
     def "should throw exception for #number"(number) {
         setup:
 
@@ -33,6 +32,19 @@ class FizzBuzzSpec extends Specification {
 
         where:
         number << [-1, 0, 101]
+    }
+
+    def "should call fizzBuzz 100 times"() {
+        setup:
+        def fizzBuzzMock = Mock(FizzBuzz)
+        def collector = new FizzBuzzCollector(fizzBuzzMock)
+
+        when:
+        def result = collector.takeAll()
+
+        then:
+        100 * fizzBuzzMock.calculate(_) >> "FooBar"
+        result.contains("FooBar")
     }
 }
 
