@@ -1,8 +1,7 @@
 rootProject.name = 'testing-jugademy'
-include 'fizzbuzz'
-include 'benchmark'
-include 'integration'
-include 'end-to-end'
-include 'spock'
-include 'trip-service-kata'
+include '0-fizzbuzz'
+include '1-integration'
+include '2-end-to-end'
+include '3-spock'
+include '4-trip-service-kata'
 
